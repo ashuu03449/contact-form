@@ -4,102 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style */
-            background-color: #f4f4f4; /* Lighter background color */
-            display: flex; /* Flexbox for centering */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 100vh; /* Full height */
-            margin: 0; /* Remove default margin */
-            animation: fadeIn 1s ease; /* Fade-in animation for the body */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .contact-form {
-            background-color: #ffffff; /* Form background color */
-            border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
-            padding: 40px; /* Increased inner padding */
-            width: 400px; /* Increased form width */
-            transform: translateY(-20px); /* Start from slightly above */
-            opacity: 0; /* Start invisible */
-            animation: slideIn 0.5s forwards; /* Slide-in animation */
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        h2 {
-            text-align: center; /* Center heading */
-            color: #333; /* Darker heading color */
-            margin-bottom: 25px; /* Spacing below heading */
-            font-size: 28px; /* Increased font size */
-        }
-
-        input, textarea {
-            width: 100%; /* Full width */
-            padding: 14px; /* Increased inner padding */
-            margin: 12px 0; /* Vertical margin */
-            border: 1px solid #b0c4de; /* Border color */
-            border-radius: 6px; /* Rounded corners for inputs */
-            box-sizing: border-box; /* Include padding and border in width */
-            transition: border-color 0.3s; /* Smooth transition for border color */
-        }
-
-        input:focus, textarea:focus {
-            border-color: #4682b4; /* Change border color on focus */
-            outline: none; /* Remove default outline */
-            box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Add shadow effect on focus */
-        }
-
-        button {
-            background-color: #4682b4; /* Button background color */
-            color: #ffffff; /* Text color */
-            border: none; /* No border */
-            padding: 14px; /* Increased padding inside the button */
-            border-radius: 6px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor on hover */
-            width: 100%; /* Full width */
-            font-size: 18px; /* Increased font size */
-            transition: background-color 0.3s, transform 0.2s; /* Transition effects */
-        }
-
-        button:hover {
-            background-color: #4169e1; /* Darker shade on hover */
-            transform: scale(1.05); /* Slightly enlarge button */
-        }
-
-        button:active {
-            transform: scale(0.95); /* Slightly shrink on click */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-
-    <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="https://formsubmit.co/ashii14245@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-
-            <!-- Add hidden inputs for template and CC -->
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_cc" value="techwithashu5@gmail.com"> <!-- CC Email -->
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="https://formsubmit.co/ashii14245@gmail.com" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <!-- Hidden Input Fields -->
             <input type="hidden" name="_next" value="https://js-table-generate.vercel.app/">
-
-            <button type="submit">Submit</button>
+            <input type="hidden" name="_cc" value="techwithashu5@gmail.com">
+            <input type="hidden" name="_captcha" value="false">
+            <button type="submit">Send</button>
         </form>
     </div>
-
 </body>
 </html>
