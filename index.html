@@ -6,8 +6,8 @@
     <title>Contact Form</title>
     <style>
         body {
-            font-family: Arial, sans-serif; /* Font style */
-            background-color: #f0f0f0; /* Background color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font style */
+            background-color: #f4f4f4; /* Lighter background color */
             display: flex; /* Flexbox for centering */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
@@ -22,11 +22,11 @@
         }
 
         .contact-form {
-            background-color: #fff; /* Form background color */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-            padding: 20px; /* Inner padding */
-            width: 300px; /* Form width */
+            background-color: #ffffff; /* Form background color */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+            padding: 40px; /* Increased inner padding */
+            width: 400px; /* Increased form width */
             transform: translateY(-20px); /* Start from slightly above */
             opacity: 0; /* Start invisible */
             animation: slideIn 0.5s forwards; /* Slide-in animation */
@@ -39,38 +39,41 @@
 
         h2 {
             text-align: center; /* Center heading */
-            color: #333; /* Heading color */
-            margin-bottom: 20px; /* Spacing below heading */
+            color: #333; /* Darker heading color */
+            margin-bottom: 25px; /* Spacing below heading */
+            font-size: 28px; /* Increased font size */
         }
 
         input, textarea {
             width: 100%; /* Full width */
-            padding: 10px; /* Inner padding */
-            margin: 10px 0; /* Vertical margin */
-            border: 1px solid #ccc; /* Border color */
-            border-radius: 5px; /* Rounded corners for inputs */
+            padding: 14px; /* Increased inner padding */
+            margin: 12px 0; /* Vertical margin */
+            border: 1px solid #b0c4de; /* Border color */
+            border-radius: 6px; /* Rounded corners for inputs */
             box-sizing: border-box; /* Include padding and border in width */
             transition: border-color 0.3s; /* Smooth transition for border color */
         }
 
         input:focus, textarea:focus {
-            border-color: #007BFF; /* Change border color on focus */
+            border-color: #4682b4; /* Change border color on focus */
             outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(70, 130, 180, 0.5); /* Add shadow effect on focus */
         }
 
         button {
-            background-color: #007BFF; /* Button background color */
-            color: #fff; /* Text color */
+            background-color: #4682b4; /* Button background color */
+            color: #ffffff; /* Text color */
             border: none; /* No border */
-            padding: 10px; /* Padding inside the button */
-            border-radius: 5px; /* Rounded corners */
+            padding: 14px; /* Increased padding inside the button */
+            border-radius: 6px; /* Rounded corners */
             cursor: pointer; /* Pointer cursor on hover */
             width: 100%; /* Full width */
+            font-size: 18px; /* Increased font size */
             transition: background-color 0.3s, transform 0.2s; /* Transition effects */
         }
 
         button:hover {
-            background-color: #0056b3; /* Darker shade on hover */
+            background-color: #4169e1; /* Darker shade on hover */
             transform: scale(1.05); /* Slightly enlarge button */
         }
 
@@ -89,6 +92,7 @@
             <textarea name="message" placeholder="Your Message" required></textarea>
 
             <!-- Add hidden inputs for template and CC -->
+            <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_cc" value="techwithashu5@gmail.com"> <!-- CC Email -->
             <input type="hidden" name="_next" value="https://js-table-generate.vercel.app/">
