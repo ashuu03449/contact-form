@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Contact Form</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+
 </head>
 <body>
     <div class="container">
         <h1>Contact Us</h1>
-        <form action="https://formsubmit.co/ashii14245@gmail.com" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <!-- Hidden Input Fields -->
-            <input type="hidden" name="_next" value="https://js-table-generate.vercel.app/">
-            <input type="hidden" name="_cc" value="techwithashu5@gmail.com">
+        <form id="contactForm" action="https://formsubmit.co/ashii14245@gmail.com"
+        method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
             <input type="hidden" name="_captcha" value="false">
-            <button type="submit">Send</button>
+            <input type="hidden" name="_next" value="https://thanks-msg.vercel.app/">
+            <input type="hidden" name="_cc" value="techwithashu@gmail.com">
+            <input type="hidden" name="_template" value="table">
+             <button type="submit">Send Message</button>
         </form>
     </div>
 </body>
